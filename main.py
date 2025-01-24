@@ -24,7 +24,7 @@ def main():
     asteroid_field = AsteroidField()
 
     dt = 0
-    
+
     # GAME LOOP
     while True:
         for event in pygame.event.get():
@@ -44,7 +44,7 @@ def main():
             for shot in shots:
                 if asteroid.is_colliding(shot):
                     shot.kill()
-                    asteroid.kill()
+                    asteroid.split()
 
         for object in drawable:
             object.draw(screen)  
