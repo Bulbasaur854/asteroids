@@ -4,7 +4,7 @@ This is a project which is part of the [boot.dev](https://www.boot.dev/) program
 
 ## To-Do
 
-- Add a scoring system
+- Add a scoring system :white_check_mark:
 - Implement multiple lives and respawning
 - Add an explosion effect for the asteroids
 - Add acceleration to the player movement
