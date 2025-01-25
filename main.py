@@ -4,6 +4,7 @@ from constants import *
 from player import *
 from asteroid import *
 from asteroidfield import *
+from score import *
 
 def main():
     pygame.init()
@@ -22,9 +23,9 @@ def main():
 
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     asteroid_field = AsteroidField()
+    score_board = Score(screen)    
 
     dt = 0
-    score = 0
 
     # GAME LOOP
     while True:
@@ -40,21 +41,19 @@ def main():
         for asteroid in asteroids:
             if asteroid.is_colliding(player):
                 print("Game over!")
-                print(f"Score: {score}")
+                print(f"Final Score: {score_board.get_score()}")
                 sys.exit(0)
 
             for shot in shots:
                 if asteroid.is_colliding(shot):
                     shot.kill()
-                    score += asteroid.score()
+                    score_board.update_score(asteroid.score())
                     asteroid.split()
 
         for object in drawable:
             object.draw(screen)  
 
-        font = pygame.font.SysFont("freemono", 30, bold=True)
-        text_surface = font.render(f"{score}", True, (0,255,0))
-        screen.blit(text_surface, (24, 24))
+        score_board.draw_score()
 
         pygame.display.flip()
 
