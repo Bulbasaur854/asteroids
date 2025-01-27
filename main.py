@@ -31,7 +31,8 @@ def main():
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                return     
+                print("Game closed!")
+                sys.exit(0)
 
         screen.fill("black")
 
@@ -40,9 +41,13 @@ def main():
 
         for asteroid in asteroids:
             if asteroid.is_colliding(player):
-                print("Game over!")
-                print(f"Final Score: {score_board.get_score()}")
-                sys.exit(0)
+                player.dies()
+                if player.lives > 0:
+                    main()
+                else:
+                    print("Game over!")
+                    print(f"Final Score: {score_board.get_score()}")
+                    sys.exit(0)
 
             for shot in shots:
                 if asteroid.is_colliding(shot):
