@@ -7,6 +7,7 @@ from asteroidfield import *
 from text import *
 
 _lives = PLAYER_LIVES
+_score = 0
 
 def main():
     pygame.init()
@@ -16,7 +17,7 @@ def main():
     run_game(screen, clock)    
 
 def run_game(screen, clock):
-    global _lives
+    global _lives, _score
 
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
@@ -30,11 +31,10 @@ def run_game(screen, clock):
 
     asteroid_field = AsteroidField()
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
-    ui_score_board = Text(24, 24, screen, "Score: 0")
+    ui_score_board = Text(24, 24, screen, f"Score: {_score}")
     ui_player_lives = Text(24, 60, screen, f"Lives: {_lives}") 
 
     dt = 0
-    score = 0
 
     while True:
         for event in pygame.event.get():
@@ -54,14 +54,14 @@ def run_game(screen, clock):
                     main()
                 else:
                     print("Game over!")
-                    print(f"Final Score: {score}")
+                    print(f"Final Score: {_score}")
                     sys.exit(0)
 
             for shot in shots:
                 if asteroid.is_colliding(shot):
                     shot.kill()
-                    score += asteroid.score()
-                    ui_score_board.update(f"Score: {score}")
+                    _score += asteroid.score()
+                    ui_score_board.update(f"Score: {_score}")
                     ui_player_lives.update(f"Lives: {_lives}")
                     asteroid.split()
 
