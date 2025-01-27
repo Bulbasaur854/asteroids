@@ -5,8 +5,8 @@ This is a project which is part of the [boot.dev](https://www.boot.dev/) program
 ## To-Do
 
 - Add a scoring system :white_check_mark:
-- Implement multiple lives and respawning :arrows_clockwise:
-- Add an explosion effect for the asteroids
+- Implement multiple lives and respawning :white_check_mark:
+- Add an explosion effect for the asteroids :arrows_clockwise:
 - Add acceleration to the player movement
 - Make the objects wrap around the screen instead of disappearing
 - Add a background image
