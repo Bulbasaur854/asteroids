@@ -4,7 +4,7 @@ from constants import *
 from player import *
 from asteroid import *
 from asteroidfield import *
-from score import *
+from text import *
 
 def main():
     pygame.init()
@@ -21,11 +21,13 @@ def main():
     AsteroidField.containers = (updatable)
     Shot.containers = (shots, updatable, drawable)
 
-    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     asteroid_field = AsteroidField()
-    score_board = Score(screen)    
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+    score_board = Text(24, 24, screen, "Score: 0")
+    player_lives = Text(24, 60, screen, f"Lives: {player.lives}") 
 
     dt = 0
+    score = 0
 
     # GAME LOOP
     while True:
@@ -52,13 +54,17 @@ def main():
             for shot in shots:
                 if asteroid.is_colliding(shot):
                     shot.kill()
-                    score_board.update_score(asteroid.score())
+
+                    score += asteroid.score()
+                    score_board.update(f"Score: {score}")
+                    player_lives.update(f"Lives: {player.lives}")
+
                     asteroid.split()
 
         for object in drawable:
             object.draw(screen)  
-
-        score_board.draw_score()
+        score_board.draw()
+        player_lives.draw()
 
         pygame.display.flip()
 
