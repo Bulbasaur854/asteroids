@@ -39,7 +39,8 @@ def run_game(screen, clock):
 
     dt = 0
 
-    particle1 = Particle(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+    for i in range(0, 100):
+        particle1 = Particle(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     while True:
         for event in pygame.event.get():

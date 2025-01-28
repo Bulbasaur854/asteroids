@@ -9,7 +9,6 @@ class Particle(CircleShape):
         rotation = random.uniform(0, 360)
         speed = random.randint(400, 600)
         self.velocity = pygame.Vector2(0, 1).rotate(rotation) * speed
-        print(f"{self.velocity}")
 
     def draw(self, screen):
         center = (self.position.x, self.position.y)
