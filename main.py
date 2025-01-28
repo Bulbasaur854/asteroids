@@ -4,6 +4,7 @@ from constants import *
 from player import *
 from asteroid import *
 from asteroidfield import *
+from particle import *
 from text import *
 
 _lives = PLAYER_LIVES
@@ -23,11 +24,13 @@ def run_game(screen, clock):
     drawable = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
     shots = pygame.sprite.Group()
+    particles = pygame.sprite.Group()
 
     Player.containers = (updatable, drawable)
     Asteroid.containers = (asteroids, updatable, drawable)
     AsteroidField.containers = (updatable)
     Shot.containers = (shots, updatable, drawable)
+    Particle.containers = (updatable, drawable)
 
     asteroid_field = AsteroidField()
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
@@ -35,6 +38,8 @@ def run_game(screen, clock):
     ui_player_lives = Text(24, 60, screen, f"Lives: {_lives}") 
 
     dt = 0
+
+    particle1 = Particle(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     while True:
         for event in pygame.event.get():

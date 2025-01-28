@@ -4,10 +4,12 @@ from circleshape import *
 
 class Particle(CircleShape):
     def __init__(self, x, y):
-        self.radius = random.uniform(0.1, 0.5)
+        self.radius = random.uniform(2, 8)
         super().__init__(x, y, self.radius)
-        self.direction = self.velocity.rotate(random.uniform(0, 360))
-        self.velocity = self.direction * 2
+        rotation = random.uniform(0, 360)
+        speed = random.randint(400, 600)
+        self.velocity = pygame.Vector2(0, 1).rotate(rotation) * speed
+        print(f"{self.velocity}")
 
     def draw(self, screen):
         center = (self.position.x, self.position.y)
