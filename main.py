@@ -24,7 +24,6 @@ def run_game(screen, clock):
     drawable = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
     shots = pygame.sprite.Group()
-    particles = pygame.sprite.Group()
 
     Player.containers = (updatable, drawable)
     Asteroid.containers = (asteroids, updatable, drawable)
@@ -38,9 +37,6 @@ def run_game(screen, clock):
     ui_player_lives = Text(24, 60, screen, f"Lives: {_lives}") 
 
     dt = 0
-
-    for i in range(0, 100):
-        particle1 = Particle(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     while True:
         for event in pygame.event.get():
