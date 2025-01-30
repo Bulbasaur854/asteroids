@@ -39,7 +39,7 @@ class Asteroid(CircleShape):
 
     def spawn_particles(self, num):
         for _ in range(0, num):
-            particle = Particle(self.position.x, self.position.y)
+            Particle(self.position.x, self.position.y)
 
     def score(self):
         if self.radius <= ASTEROID_MIN_RADIUS:
