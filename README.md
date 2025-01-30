@@ -10,9 +10,9 @@ This is a project which is part of the [boot.dev](https://www.boot.dev/) program
 - Add acceleration to the player movement :white_check_mark:
 - Make the objects wrap around the screen instead of disappearing :white_check_mark:
 - Add a background image :white_check_mark:
-- Create different weapon types :arrows_clockwise:
-- Make the asteroids lumpy instead of perfectly round
+- Make the asteroids lumpy instead of perfectly round :arrows_clockwise:
 - Make the ship have a triangular hit box instead of a circular one
 - Add a shield power-up
 - Add a speed power-up
+- Create different weapon types 
 - Add bombs that can be dropped
