@@ -9,6 +9,7 @@ class Asteroid(CircleShape):
     def __init__(self, x, y, radius):
         super().__init__(x, y, radius)
         self.angle = 0
+        self.rotate_direction = random.choice([-1, 1])
         self.points = self.init_points()
 
     def draw(self, screen):
@@ -50,7 +51,7 @@ class Asteroid(CircleShape):
     def update(self, dt):
         self.position.x += self.velocity.x * dt
         self.position.y += self.velocity.y * dt
-        self.angle += ASTEROID_ROTATE_SPEED
+        self.angle += ASTEROID_ROTATE_SPEED * self.rotate_direction
 
         self.wrap_around()
 

@@ -47,7 +47,7 @@ def run_game(screen, clock):
                 sys.exit(0)
 
         screen.fill("black")
-        screen.blit(background_image, (0, 0))
+        # screen.blit(background_image, (0, 0))
 
         for object in updatable:
             object.update(dt)
