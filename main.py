@@ -58,7 +58,7 @@ def run_game(screen, clock):
                 ui_player_lives.update(f"Lives: {_lives}")
                 player.kill()
                 if _lives > 0:
-                    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+                    main()
                 else:
                     print("Game over!")
                     print(f"Final Score: {_score}")
