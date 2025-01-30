@@ -35,7 +35,7 @@ def run_game(screen, clock):
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     ui_score_board = Text(24, 24, screen, f"Score: {_score}")
     ui_player_lives = Text(24, 60, screen, f"Lives: {_lives}") 
-    background_image = pygame.image.load("background.png")
+    background_image = pygame.image.load("background.jpg")
     background_image.set_alpha(100)
 
     dt = 0
@@ -55,8 +55,10 @@ def run_game(screen, clock):
         for asteroid in asteroids:
             if asteroid.is_colliding(player):
                 _lives -= 1
+                ui_player_lives.update(f"Lives: {_lives}")
+                player.kill()
                 if _lives > 0:
-                    main()
+                    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
                 else:
                     print("Game over!")
                     print(f"Final Score: {_score}")
@@ -67,7 +69,6 @@ def run_game(screen, clock):
                     shot.kill()
                     _score += asteroid.score()
                     ui_score_board.update(f"Score: {_score}")
-                    ui_player_lives.update(f"Lives: {_lives}")
                     asteroid.split()
 
         for object in drawable:
