@@ -8,8 +8,8 @@ This is a project which is part of the [boot.dev](https://www.boot.dev/) program
 - Implement multiple lives and respawning :white_check_mark:
 - Add an explosion effect for the asteroids :white_check_mark:
 - Add acceleration to the player movement :white_check_mark:
-- Make the objects wrap around the screen instead of disappearing :arrows_clockwise:
-- Add a background image
+- Make the objects wrap around the screen instead of disappearing :white_check_mark:
+- Add a background image :arrows_clockwise:
 - Create different weapon types
 - Make the asteroids lumpy instead of perfectly round
 - Make the ship have a triangular hit box instead of a circular one
