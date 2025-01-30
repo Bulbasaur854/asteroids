@@ -36,7 +36,7 @@ def run_game(screen, clock):
     ui_score_board = Text(24, 24, screen, f"Score: {_score}")
     ui_player_lives = Text(24, 60, screen, f"Lives: {_lives}") 
     background_image = pygame.image.load("background.jpg")
-    background_image.set_alpha(100)
+    background_image.set_alpha(200)
 
     dt = 0
 
