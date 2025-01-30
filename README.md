@@ -7,8 +7,8 @@ This is a project which is part of the [boot.dev](https://www.boot.dev/) program
 - Add a scoring system :white_check_mark:
 - Implement multiple lives and respawning :white_check_mark:
 - Add an explosion effect for the asteroids :white_check_mark:
-- Add acceleration to the player movement :arrows_clockwise:
-- Make the objects wrap around the screen instead of disappearing
+- Add acceleration to the player movement :white_check_mark:
+- Make the objects wrap around the screen instead of disappearing :arrows_clockwise:
 - Add a background image
 - Create different weapon types
 - Make the asteroids lumpy instead of perfectly round
