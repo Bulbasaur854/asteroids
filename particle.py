@@ -13,7 +13,8 @@ class Particle(CircleShape):
 
     def draw(self, screen):
         center = (self.position.x, self.position.y)
-        pygame.draw.circle(screen, "white", center, self.radius, 2)
+        color = pygame.Color(120, 120, 120)
+        pygame.draw.circle(screen, color, center, self.radius, 2)
         
     def update(self, dt):
         self.position.x += self.velocity.x * dt
