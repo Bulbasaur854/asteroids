@@ -16,13 +16,31 @@ class Asteroid(CircleShape):
         self.position.x += self.velocity.x * dt
         self.position.y += self.velocity.y * dt
 
+        self.wrap_around()
+
+    def wrap_around(self):
+        border_x_min = 0 - ASTEROID_MAX_RADIUS - ASTEROID_WRAP_OFFSET
+        border_x_max = SCREEN_WIDTH + ASTEROID_MAX_RADIUS + ASTEROID_WRAP_OFFSET
+        border_y_min = 0 - ASTEROID_MAX_RADIUS - ASTEROID_WRAP_OFFSET
+        border_y_max = SCREEN_HEIGHT + ASTEROID_MAX_RADIUS + ASTEROID_WRAP_OFFSET
+
+        if self.position.x < border_x_min:
+            self.position.x = border_x_max
+        elif self.position.x > border_x_max:
+            self.position.x = border_x_min
+        
+        if self.position.y < border_y_min:
+            self.position.y = border_y_max
+        elif self.position.y > border_y_max:
+            self.position.y = border_y_min
+
     def split(self):
-        self.spawn_particles(ASTEROIS_PARTICLES_NUM)
+        self.spawn_particles(ASTEROID_PARTICLES_NUM)
         self.kill()
         
         # small asteroid, we are done
         if self.radius <= ASTEROID_MIN_RADIUS:
-            self.spawn_particles(ASTEROIS_PARTICLES_NUM * 3)
+            self.spawn_particles(ASTEROID_PARTICLES_NUM * 3)
             return
         
         # spawn 2 new, smaller asteroids
