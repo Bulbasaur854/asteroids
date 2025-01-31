@@ -1,5 +1,7 @@
 import pygame
 import random
+import pygame.gfxdraw
+
 from circleshape import *
 from constants import *
 
@@ -14,7 +16,7 @@ class Particle(CircleShape):
     def draw(self, screen):
         center = (self.position.x, self.position.y)
         color = pygame.Color(120, 120, 120)
-        pygame.draw.circle(screen, color, center, self.radius, 2)
+        pygame.gfxdraw.filled_circle(screen, int(center[0]), int(center[1]), int(self.radius), color)
         
     def update(self, dt):
         self.position.x += self.velocity.x * dt
