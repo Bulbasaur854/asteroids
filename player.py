@@ -69,3 +69,11 @@ class Player(CircleShape):
             self.position.y = SCREEN_HEIGHT
         elif self.position.y > SCREEN_HEIGHT:
             self.position.y = 0
+
+    def is_colliding(self, other):
+        for point in self.triangle():
+            if point.distance_to(other.position) < other.radius:
+                return True
+            
+        return False
+            

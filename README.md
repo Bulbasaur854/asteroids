@@ -11,8 +11,8 @@ This is a project which is part of the [boot.dev](https://www.boot.dev/) program
 - Make the objects wrap around the screen instead of disappearing :white_check_mark:
 - Add a background image :white_check_mark:
 - Make the asteroids lumpy instead of perfectly round :white_check_mark:
-- Make the ship have a triangular hit box instead of a circular one :arrows_clockwise:
-- Add a shield power-up
+- Make the ship have a triangular hit box instead of a circular one :white_check_mark:
+- Add a shield power-up :arrows_clockwise:
 - Add a speed power-up
 - Create different weapon types 
 - Add bombs that can be dropped

@@ -53,7 +53,8 @@ def run_game(screen, clock):
             object.update(dt)
 
         for asteroid in asteroids:
-            if asteroid.is_colliding(player):
+            # if asteroid.is_colliding(player):
+            if player.is_colliding(asteroid):
                 _lives -= 1
                 ui_player_lives.update(f"Lives: {_lives}")
                 player.kill()

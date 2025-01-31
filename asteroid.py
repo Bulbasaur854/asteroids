@@ -15,38 +15,33 @@ class Asteroid(CircleShape):
     def draw(self, screen):
         pygame.draw.polygon(screen, "black", self.get_rotated_points())
         pygame.draw.polygon(screen, "white", self.get_rotated_points(), 2)
-        # center = (self.position.x, self.position.y)
-        # pygame.draw.circle(screen, "black", center, self.radius)
-        # pygame.draw.circle(screen, "white", center, self.radius, 2)
 
     def init_points(self):
         points = []
 
         for i in range(ASTEROID_VERTICES):
-            angle = (i / ASTEROID_VERTICES) * (2 * math.pi)  # Evenly spaced angles
+            angle = (i / ASTEROID_VERTICES) * (2 * math.pi)  # evenly spaced angles
             random_offset = random.uniform(-ASTEROID_ROUGHNESS, ASTEROID_ROUGHNESS) * self.radius
-            r = self.radius + random_offset  # Apply perturbation
+            r = self.radius + random_offset  # apply perturbation
             x = math.cos(angle) * r
             y = math.sin(angle) * r
-            points.append((x, y))  # Store relative to center (no position offset)
+            points.append((x, y))  # store relative to center (no position offset)
 
         return points
-
     
     def get_rotated_points(self):
         rotated_points = []
-        cx, cy = self.position.x, self.position.y  # Center position
+        cx, cy = self.position.x, self.position.y  # center position
 
         for x, y in self.points:
-            # Rotate the relative point
+            # rotate the relative point
             rotated_x = x * math.cos(self.angle) - y * math.sin(self.angle)
             rotated_y = x * math.sin(self.angle) + y * math.cos(self.angle)
 
-            # Apply position offset AFTER rotation
+            # apply position offset after rotation
             rotated_points.append((cx + rotated_x, cy + rotated_y))
 
         return rotated_points
-
 
     def update(self, dt):
         self.position.x += self.velocity.x * dt
