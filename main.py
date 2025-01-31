@@ -25,7 +25,7 @@ def run_game(screen, clock):
     asteroids = pygame.sprite.Group()
     shots = pygame.sprite.Group()
 
-    Player.containers = (updatable, drawable)
+    Player.containers = (updatable)
     Asteroid.containers = (asteroids, updatable, drawable)
     AsteroidField.containers = (updatable)
     Shot.containers = (shots, updatable, drawable)
@@ -75,6 +75,7 @@ def run_game(screen, clock):
             object.draw(screen)  
         ui_score_board.draw()
         ui_player_lives.draw()
+        player.draw(screen) # in order to draw player over the projectile
 
         pygame.display.flip()
 
