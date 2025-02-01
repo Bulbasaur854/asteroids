@@ -73,7 +73,6 @@ class Player(CircleShape):
     def is_colliding(self, other):
         for point in self.triangle():
             if point.distance_to(other.position) < other.radius:
-                return True
-            
+                return True            
         return False
-            
+
