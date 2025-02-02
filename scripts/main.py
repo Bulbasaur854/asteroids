@@ -26,7 +26,7 @@ def run_menu(screen, clock):
 
         screen.fill("black")
 
-        play_text = Text(24, 24, screen, "[P] start game")   
+        play_text = Text(24, 24, screen, "[S] start game")   
         quit_text = Text(24, 60, screen, "[Q] quit")  
         play_text.draw()
         quit_text.draw()

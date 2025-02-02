@@ -8,7 +8,7 @@ class Text():
         self.screen = screen
         self.text = text
         # self.font = pygame.font.SysFont("freemono", TEXT_SIZE, bold=True)
-        self.font = pygame.font.Font("Hyperspace.ttf", TEXT_SIZE)
+        self.font = pygame.font.Font("hyperspace.ttf", TEXT_SIZE)
         self.font.bold = True
         self.draw()        
 
