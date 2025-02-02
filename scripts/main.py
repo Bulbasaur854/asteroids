@@ -35,7 +35,7 @@ def run_menu(screen, clock):
         if keys[pygame.K_q]:
             print("Game closed!")
             sys.exit(0)
-        if keys[pygame.K_p]:
+        if keys[pygame.K_s]:
             play_game(screen, clock)
 
         pygame.display.flip()
