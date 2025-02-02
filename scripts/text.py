@@ -2,13 +2,13 @@ import pygame
 from constants import *
 
 class Text():
-    def __init__(self, x, y, screen, text):
+    def __init__(self, x, y, screen, text, text_size=TEXT_SIZE):
         self.x = x
         self.y = y
         self.screen = screen
         self.text = text
         # self.font = pygame.font.SysFont("freemono", TEXT_SIZE, bold=True)
-        self.font = pygame.font.Font("hyperspace.ttf", TEXT_SIZE)
+        self.font = pygame.font.Font("hyperspace.ttf", text_size)
         self.font.bold = True
         self.draw()        
 

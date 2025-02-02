@@ -26,10 +26,12 @@ def run_menu(screen, clock):
 
         screen.fill("black")
 
-        play_text = Text(24, 24, screen, "[P] start game")   
-        quit_text = Text(24, 60, screen, "[Q] quit")  
-        play_text.draw()
-        quit_text.draw()
+        Text(24, 24, screen, "Welcome to Asteroids").draw()
+        Text(30, 64, screen, "- [P] start game").draw()
+        Text(30, 100, screen, "- [Q] quit").draw()
+        Text(24, SCREEN_HEIGHT - 48, screen, "created by: Bul8a54ur", int(TEXT_SIZE / 1.5)).draw()
+        # play_text.draw()
+        # quit_text.draw()
 
         keys = pygame.key.get_pressed()    
         if keys[pygame.K_q]:
