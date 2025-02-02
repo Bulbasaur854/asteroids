@@ -26,7 +26,7 @@ def run_menu(screen, clock):
 
         screen.fill("black")
 
-        play_text = Text(24, 24, screen, "[S] start game")   
+        play_text = Text(24, 24, screen, "[P] start game")   
         quit_text = Text(24, 60, screen, "[Q] quit")  
         play_text.draw()
         quit_text.draw()
@@ -35,7 +35,7 @@ def run_menu(screen, clock):
         if keys[pygame.K_q]:
             print("Game closed!")
             sys.exit(0)
-        if keys[pygame.K_s]:
+        if keys[pygame.K_p]:
             play_game(screen, clock)
 
         pygame.display.flip()
