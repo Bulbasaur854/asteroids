@@ -13,11 +13,34 @@ _score = 0
 def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    clock = pygame.time.Clock()    
+    clock = pygame.time.Clock() 
 
-    run_game(screen, clock)    
+    run_menu(screen, clock)   
 
-def run_game(screen, clock):
+def run_menu(screen, clock):
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                print("Game closed!")
+                sys.exit(0) 
+
+        screen.fill("black")
+
+        play_text = Text(24, 24, screen, "'P' to start game")   
+        quit_text = Text(24, 60, screen, "'Q' to quit")  
+        play_text.draw()
+        quit_text.draw()
+
+        keys = pygame.key.get_pressed()    
+        if keys[pygame.K_q]:
+            print("Game closed!")
+            sys.exit(0)
+        if keys[pygame.K_p]:
+            play_game(screen, clock)
+
+        pygame.display.flip()
+
+def play_game(screen, clock):
     global _lives, _score
 
     updatable = pygame.sprite.Group()
@@ -58,11 +81,13 @@ def run_game(screen, clock):
                 ui_player_lives.update(f"Lives: {_lives}")
                 player.kill()
                 if _lives > 0:
-                    main()
+                    play_game(screen, clock)
                 else:
                     print("Game over!")
                     print(f"Final Score: {_score}")
-                    sys.exit(0)
+                    _lives = 3
+                    _score = 0
+                    run_menu(screen, clock)
 
             for shot in shots:
                 if asteroid.is_colliding(shot):
