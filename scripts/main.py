@@ -31,9 +31,6 @@ def run_menu(screen, clock):
         Text(24, 84, screen, "> [Q] quit", 18).draw()
         Text(24, SCREEN_HEIGHT - 40, screen, "> created by - Bul8a54ur", 18).draw()
 
-        player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
-        player.draw(screen)
-
         keys = pygame.key.get_pressed()    
         if keys[pygame.K_q]:
             print("Game closed!")
