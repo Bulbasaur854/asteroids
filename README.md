@@ -2,6 +2,10 @@
 
 This is a project which is part of the [boot.dev](https://www.boot.dev/) program, included in the "Build Asteroids" guided project course
 
+## Installation
+
+Just download the latest release, extract to any folder and run the `exe` file
+
 ## To-Do
 
 - Add a scoring system :white_check_mark:
