@@ -16,7 +16,7 @@ Just download the latest release, extract to any folder and run the `exe` file
 - Add a background image :white_check_mark:
 - Make the asteroids lumpy instead of perfectly round :white_check_mark:
 - Make the ship have a triangular hit box instead of a circular one :white_check_mark:
-- Add a way for player to return to main menu / quit during gameplay :arrows_clockwise:
+- Add a way for player to return to main menu / quit during gameplay :white_check_mark:
 - Track the high score and previous game score :arrows_clockwise:
 - Add a shield power-up
 - Add a speed power-up

@@ -26,15 +26,17 @@ def run_menu(screen, clock):
 
         screen.fill("black")
 
-        Text(24, 28, screen, "> Welcome to Asteroids", 18).draw()
-        Text(24, 56, screen, "> [P] play game", 18).draw()
-        Text(24, 84, screen, "> [Q] quit", 18).draw()
-        Text(24, SCREEN_HEIGHT - 40, screen, "> created by - Bul8a54ur", 18).draw()
+        Text(24, MENU_LINE_HEIGHT, screen, "> Welcome to Asteroids", 18).draw()
+        Text(24, MENU_LINE_HEIGHT * 2, screen, "> --------------------", 18).draw()
+        Text(24, MENU_LINE_HEIGHT * 3, screen, "> play    [P]", 18).draw()
+        Text(24, MENU_LINE_HEIGHT * 4, screen, "> menu    [M]", 18).draw()
+        Text(24, MENU_LINE_HEIGHT * 5, screen, "> quit    [Esc] ", 18).draw()
+        Text(24, MENU_LINE_HEIGHT * 7, screen, "> Created by - Bul8a54ur", 18).draw()
 
         keys = pygame.key.get_pressed()    
-        if keys[pygame.K_q]:
+        if keys[pygame.K_ESCAPE]:
             print("Game closed!")
-            sys.exit(0)
+            sys.exit(0)        
         if keys[pygame.K_p]:
             play_game(screen, clock)
 
@@ -68,6 +70,13 @@ def play_game(screen, clock):
             if event.type == pygame.QUIT:
                 print("Game closed!")
                 sys.exit(0)
+
+        pressed = pygame.key.get_pressed()
+        if pressed[pygame.K_ESCAPE]:
+            print("Game closed!")
+            sys.exit(0) 
+        if pressed[pygame.K_m]:
+            run_menu(screen, clock)
 
         screen.fill("black")
         # screen.blit(background_image, (0, 0))
