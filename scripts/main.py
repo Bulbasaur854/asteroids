@@ -26,12 +26,7 @@ def run_menu(screen, clock):
 
         screen.fill("black")
 
-        Text(24, MENU_LINE_HEIGHT, screen, "> Welcome to Asteroids", 18).draw()
-        Text(24, MENU_LINE_HEIGHT * 2, screen, "> --------------------", 18).draw()
-        Text(24, MENU_LINE_HEIGHT * 3, screen, "> play    [P]", 18).draw()
-        Text(24, MENU_LINE_HEIGHT * 4, screen, "> menu    [M]", 18).draw()
-        Text(24, MENU_LINE_HEIGHT * 5, screen, "> quit    [Q] ", 18).draw()
-        Text(24, MENU_LINE_HEIGHT * 7, screen, "> Created by - Bul8a54ur", 18).draw()
+        draw_menu_text(screen)
 
         keys = pygame.key.get_pressed()    
         if keys[pygame.K_q]:
@@ -111,6 +106,25 @@ def play_game(screen, clock):
         pygame.display.flip()
 
         dt = clock.tick(60) / 1000
+
+def draw_menu_text(screen):
+    Text(24, MENU_LINE_HEIGHT, screen, "> Welcome to Asteroids", 18).draw()
+    Text(24, MENU_LINE_HEIGHT * 2, screen, "> --------------------", 18).draw()
+    Text(24, MENU_LINE_HEIGHT * 3, screen, "> play", 18).draw()
+    Text(224, MENU_LINE_HEIGHT * 3, screen, "[P]", 18).draw()
+    Text(24, MENU_LINE_HEIGHT * 4, screen, "> menu", 18).draw()
+    Text(224, MENU_LINE_HEIGHT * 4, screen, "[M]", 18).draw()
+    Text(24, MENU_LINE_HEIGHT * 5, screen, "> quit", 18).draw()
+    Text(224, MENU_LINE_HEIGHT * 5, screen, "[Q]", 18).draw()
+    Text(24, MENU_LINE_HEIGHT * 7, screen, "> Controls", 18).draw()
+    Text(24, MENU_LINE_HEIGHT * 8, screen, "> --------", 18).draw()
+    Text(24, MENU_LINE_HEIGHT * 9, screen, "> move", 18).draw()
+    Text(224, MENU_LINE_HEIGHT * 9, screen, "[W] = fwd / [S] = bwd", 18).draw()
+    Text(24, MENU_LINE_HEIGHT * 10, screen, "> rotate", 18).draw()
+    Text(224, MENU_LINE_HEIGHT * 10, screen, "[A] = lft / [D] = rgt", 18).draw()
+    Text(24, MENU_LINE_HEIGHT * 11, screen, "> shoot", 18).draw()
+    Text(224, MENU_LINE_HEIGHT * 11, screen, "[Spc]", 18).draw()
+    Text(24, MENU_LINE_HEIGHT * 13 , screen, "> Created by - Bul8a54ur", 18).draw()
 
 if __name__ == "__main__":
     main()
