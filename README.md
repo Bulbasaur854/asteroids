@@ -1,6 +1,6 @@
 # Asteroids
 
-The classic Asteroids game built using Python, specifically the Pygame library.
+The classic Asteroids game built using Python, specifically the [Pygame](https://www.pygame.org/news) library.
 
 ## Installation
 
