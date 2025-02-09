@@ -1,8 +1,6 @@
 # Asteroids
 
-This is a project which is part of the [boot.dev](https://www.boot.dev/) program, included in the "Build Asteroids" guided project course.
-
-As part of the course a base project was built with guidence, while all items in the list below are additions / improvements made (being worked on) solely by me.
+The classic Asteroids game built using Python, specifically the Pygame library.
 
 ## Installation
 
